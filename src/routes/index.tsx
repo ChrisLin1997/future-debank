@@ -13,7 +13,7 @@ const routes = [
   { key: 'protocol', path: '/protocol', index: false, component: lazy(() => import('@/pages/protocol')) },
   { key: 'wallet', path: '/wallet', index: false, component: lazy(() => import('@/pages/wallet')),
     children: [
-      { key: 'profile', path: 'profile', index: true, component: lazy(() => import('@/pages/wallet/profile')) },
+      { key: 'tokens', path: 'tokens', index: true, component: lazy(() => import('@/pages/wallet/tokens')) },
       { key: 'transactions', path: 'transactions', index: false, component: lazy(() => import('@/pages/wallet/transactions')) },
       { key: 'setting', path: 'setting', index: false, component: lazy(() => import('@/pages/wallet/setting')) },
     ]

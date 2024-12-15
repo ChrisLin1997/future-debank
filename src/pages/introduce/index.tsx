@@ -32,8 +32,8 @@ const Introduce = () => {
               <Link to="/economy">
                 <Button variant="outlined" size="large">{t('economy_news')}</Button>
               </Link>
-              <Link to="/protocol">
-                <Button variant="contained" size="large">{t('earning_profits')}</Button>
+              <Link to="/wallet/tokens">
+                <Button variant="contained" size="large">{t('asset_managment')}</Button>
               </Link>
             </div>
           </div>
@@ -66,9 +66,9 @@ const Introduce = () => {
           </article>
           <article className="mb-6 w-full sm:w-1/3 flex flex-col items-center">
             <img src={ProtocolImg} className="mb-2 w-auto h-32" draggable="false" />
-            <div className="mb-4 font-black text-2xl text-primary-light">{t('earning_profits')}</div>
-            <p className="mb-6 px-4 text-center">{t('earning_profits_tip')}</p>
-            <Link to="/protocol" className="mt-auto">
+            <div className="mb-4 font-black text-2xl text-primary-light">{t('asset_managment')}</div>
+            <p className="mb-6 px-4 text-center">{t('asset_managment_tip')}</p>
+            <Link to="/wallet/tokens" className="mt-auto">
               <Button className="w-20 !capitalize" variant="contained">{t('detail')}</Button>
             </Link>
           </article>

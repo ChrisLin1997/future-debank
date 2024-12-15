@@ -53,7 +53,6 @@ const Wallet = () => {
         <DialogContent>
           {tab === ETab.SEND && <Send />}
           {tab === ETab.RECEIVE && <Receive />}
-          {/* {tab === ETab.BRIDGE && <Send />} */}
           {tab === ETab.SWAP && <Swap />}
           {tab === ETab.DONATE && <Donate />}
         </DialogContent>

@@ -1,5 +1,6 @@
 import { Avatar } from '@mui/material'
 import AvatarIcon from '@/assets/images/avatar/avatar1.png'
+import CopyIcon from '@/assets/images/copy.png'
 import { useEffect, useMemo, useState } from 'react'
 import Actions from './actions'
 import { CHAIN_INFO } from '@/global/chain'
@@ -12,7 +13,7 @@ import { Outlet } from 'react-router'
 import { NavLink } from 'react-router-dom'
 
 const tabs = [
-  { label: 'Profile', url: '/wallet/profile' },
+  { label: 'Tokens', url: '/wallet/tokens' },
   { label: 'Transactions', url: '/wallet/transactions' },
   { label: 'Setting', url: '/wallet/setting' },
 ]
@@ -53,7 +54,12 @@ const User = () => {
 
             <div className="w-[calc(100%-100px)] break-all">
               <div className="text-lg font-bold">{ensName || '-'}</div>
-              <div className="mb-1 cursor-pointer" onClick={() => copy(account)}>{account || '-'}</div>
+              <div className="mb-1 flex items-center gap-2">
+                <span className="w-fit font-bold text-xl">{account || '-'}</span>
+                <div className="p-2 bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 transition-all" onClick={() => copy(account)}>
+                  <img src={CopyIcon} alt="" className="w-5 h-5" />
+                </div>
+              </div>
               <div className="text-gray-secondary">This user has not added a bio yet</div>
             </div>
           </article>

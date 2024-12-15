@@ -1,6 +1,5 @@
 import { MouseEvent, useState } from 'react'
-// import { HeaderWrapper, HeaderContainer, LogoWrapper, NavItem, ConnectWallet, ChainItem, Protocol } from './header.style'
-import { HeaderWrapper, HeaderContainer, LogoWrapper, NavItem, ConnectWallet, ChainItem, UserItem, Protocol } from './header.style'
+import { HeaderWrapper, HeaderContainer, LogoWrapper, NavItem, ConnectWallet, ChainItem, UserItem } from './header.style'
 import { Button, Popover, Typography } from '@mui/material'
 import { CHAIN_INFO, CHAIN_INFO_LIST } from '@/global/chain'
 import LogoImg from '@/assets/images/logo-icon.png'
@@ -55,11 +54,11 @@ const Header = () => {
     { key: 'economy', path: '/economy', text: t('economy') },
     // { key: 'analysis', path: '/analysis', text: 'Analysis' },
     // { key: 'community', path: '/community', text: 'Community' },
-    { key: 'protocol', path: '/protocol', text: <Protocol>{t('strag_protocol')}</Protocol> },
+    // { key: 'protocol', path: '/protocol', text: <Protocol>{t('strag_protocol')}</Protocol> },
   ]
 
   const userMenu = [
-    { key: 'wallet', path: '/wallet/profile', text: t('wallet'), icon: <WalletIcon /> },
+    { key: 'wallet', path: '/wallet/tokens', text: t('wallet'), icon: <WalletIcon /> },
   ]
 
   return (
@@ -129,7 +128,7 @@ const Header = () => {
             anchorOrigin={anchorOrigin}
             sx={anchorStyle}
           >
-            <div>
+            <div className="py-1 px-2">
               {CHAIN_INFO_LIST.map((item) => (
                 <ChainItem className={item.id === wallet.chainId ? 'active' : ''} key={item.id} onClick={() => wallet.switchChain(item.id)}>
                   <img className="chain-icon" src={item.icon}  />
@@ -148,7 +147,7 @@ const Header = () => {
             anchorOrigin={anchorOrigin}
             sx={anchorStyle}
           >
-            <div style={{ padding: '6px', width: '164px' }}>
+            <div className="p-1 w-40">
               {userMenu.map((item) => (
                 <UserItem key={item.key} to={item.path} onClick={handleUserMenuClose}>
                   {item.icon}

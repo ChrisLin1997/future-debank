@@ -27,7 +27,7 @@ const Layout = ({ isErrorPage = false, children }: LayoutProps) => {
       </section>
 
       <Footer />
-      <Toaster position="top-center" reverseOrder={true} toastOptions={toastOption}/>
+      <Toaster position="bottom-right" reverseOrder={true} toastOptions={toastOption}/>
     </main>
   )
 }

@@ -1,7 +1,7 @@
 import Container from '@/components/container'
 
 
-const Profile = () => {
+const Setting = () => {
   return (
     <Container>
       <div>
@@ -11,4 +11,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Setting

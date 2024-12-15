@@ -3,17 +3,16 @@ import avalanche from '@/assets/images/chain/avalanche.png'
 import bsc from '@/assets/images/chain/bsc.png'
 import ethereum from '@/assets/images/chain/ethereum.png'
 import optimism from '@/assets/images/chain/optimism.png'
-import polygon from '@/assets/images/chain/polygon.png'
-import zksync from '@/assets/images/chain/zksync.png'
+import base from '@/assets/images/chain/base.png'
+import { isDevelopmentMode } from '@/utils'
 
 export enum Chain {
   ETH = 1,
+  BASE = 8453,
   BSC = 56,
   AVAX = 43114,
-  Polygon = 137,
   ARB = 42161,
   OP = 10,
-  ZK = 324,
   Sepolia = 11155111,
 }
 
@@ -42,6 +41,17 @@ export const CHAIN_INFO: { [props: number]: ChainInfo } = {
       icon: ethereum,
     }
   },
+  [Chain.BASE]: {
+    icon: base,
+    id: Chain.BASE,
+    name: 'Base',
+    rpc: 'https://mainnet.base.org',
+    explorer: 'https://basescan.org',
+    coin: {
+      name: 'ETH',
+      icon: 'eth-icon',
+    },
+  },
   [Chain.BSC]: {
     icon: bsc,
     id: Chain.BSC,
@@ -62,17 +72,6 @@ export const CHAIN_INFO: { [props: number]: ChainInfo } = {
     coin: {
       name: 'AVAX',
       icon: avalanche,
-    },
-  },
-  [Chain.Polygon]: {
-    icon: polygon,
-    id: Chain.Polygon,
-    name: 'Polygon',
-    rpc: 'https://rpc-mainnet.matic.network',
-    explorer: 'https://polygonscan.com',
-    coin: {
-      name: 'MATIC',
-      icon: polygon,
     },
   },
   [Chain.ARB]: {
@@ -98,17 +97,6 @@ export const CHAIN_INFO: { [props: number]: ChainInfo } = {
       icon: ethereum,
     },
   },
-  [Chain.ZK]: {
-    icon: zksync,
-    id: Chain.ZK,
-    name: 'ZkSync era',
-    rpc: 'https://mainnet.era.zksync.io',
-    explorer: 'https://explorer.zksync.io',
-    coin: {
-      name: 'ETH',
-      icon: ethereum,
-    },
-  },
   [Chain.Sepolia]: {
     icon: ethereum,
     id: Chain.Sepolia,
@@ -125,11 +113,13 @@ export const CHAIN_INFO: { [props: number]: ChainInfo } = {
 
 export const CHAIN_INFO_LIST = [
   CHAIN_INFO[Chain.ETH],
-  CHAIN_INFO[Chain.BSC],
-  CHAIN_INFO[Chain.AVAX],
-  CHAIN_INFO[Chain.Polygon],
+  CHAIN_INFO[Chain.BASE],
   CHAIN_INFO[Chain.ARB],
   CHAIN_INFO[Chain.OP],
-  CHAIN_INFO[Chain.ZK],
-  CHAIN_INFO[Chain.Sepolia],
+  CHAIN_INFO[Chain.BSC],
+  CHAIN_INFO[Chain.AVAX],
 ]
+
+if (isDevelopmentMode()) {
+  CHAIN_INFO_LIST.push(CHAIN_INFO[Chain.Sepolia])
+}
