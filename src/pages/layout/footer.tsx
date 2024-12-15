@@ -1,7 +1,7 @@
 import LogoIcon from '@/assets/images/logo-icon.png'
-import TelegramIcon from '@/assets/icons/telegram.svg?react'
-import XIcon from '@/assets/icons/x.svg?react'
-import ArbitrumIcon from '@/assets/icons/arbitrum.svg?react'
+// import TelegramIcon from '@/assets/icons/telegram.svg?react'
+// import XIcon from '@/assets/icons/x.svg?react'
+// import ArbitrumIcon from '@/assets/icons/arbitrum.svg?react'
 import MailIcon from '@/assets/icons/mail.svg?react'
 import { useTranslation } from 'react-i18next'
 
@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <div className="mb-4 flex items-center gap-4">
+          {/* <div className="mb-4 flex items-center gap-4">
             <XIcon width="24px" height="24px" className="cursor-pointer" onClick={() => window.open('https://twitter.com/Strategle_Tech')}/>
             <TelegramIcon width="24px" height="24px" className="cursor-pointer" onClick={() => window.open('https://t.me/STRAG_Protocol')} />
             <div className="flex w-[24px] h-[24px] cursor-pointer rounded-full border-solid border border-gray-1" onClick={() => window.open('https://www.strategle.tech/protocol')}>
@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="relative flex w-[24px] h-[24px] cursor-pointer" onClick={() => window.open('https://arbiscan.io/address/0x7683aC3FF19cf4A6ac42E035aFe67f237086fAC1')}>
               <ArbitrumIcon width="48px" height="48px" className="absolute inset-0 -left-[12px] m-auto pointer-events-none" />
             </div>
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-2">
             <MailIcon width="16px" height="16px" />

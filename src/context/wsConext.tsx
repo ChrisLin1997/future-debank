@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { createContainer } from 'unstated-next'
 
 type WebSocketServer = WebSocket | null
-const WS_URL = import.meta.env.DEV ? 'wss://strategle-ceb4ef33a51c.herokuapp.com' : `wss://${location.host}`
+const WS_URL = import.meta.env.DEV ? 'wss://strategle-214abd57532a.herokuapp.com/' : `wss://${location.host}`
 
 const useWebSocketServer = () => {
   const [webSocketServer, setServer] = useState<WebSocketServer>(null)

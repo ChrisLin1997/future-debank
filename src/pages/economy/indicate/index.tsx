@@ -49,7 +49,7 @@ export default function Indicate () {
                     <div className="flex items-end gap-3">
                       <div className="font-bold whitespace-nowrap text-xl">{item.formatValue}</div>
                       <div className={`mb-1 px-2 font-bold whitespace-nowrap text-sm rounded-md ${ isUp ? 'text-up bg-up-extend' : 'text-down bg-down-extend' }`} style={{ color: getChangeColor(changeNumber) }}>
-                        {`${isUp ? '+' : '-'}${change.toFixed(2)}${item.unit}`}
+                        {`${isUp ? '+' : ''}${change.toFixed(2)}${item.unit}`}
                       </div>
 
                       <img className="ml-auto w-8 h-8" src={isUp ? UpIcon : DownIcon } />

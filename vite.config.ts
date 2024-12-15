@@ -19,14 +19,14 @@ export default defineConfig(({ mode }) => {
       port: 8000,
       proxy: {
         '^/api': {
-          target: mode === 'development' ? 'https://strategle-ceb4ef33a51c.herokuapp.com' : '/',
+          target: mode === 'development' ? 'https://strategle-214abd57532a.herokuapp.com/' : '/',
           rewrite: path => path.replace(/^\/api/, ''),
           changeOrigin: true,
           secure: false,
           ws: true,
         },
         '^/images': {
-          target: mode === 'development' ? 'https://strategle-ceb4ef33a51c.herokuapp.com' : '/',
+          target: mode === 'development' ? 'https://strategle-214abd57532a.herokuapp.com/' : '/',
           changeOrigin: true,
           secure: false,
         }

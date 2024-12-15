@@ -89,10 +89,10 @@ export const useIndicate = () => {
 
   const indicateData = useMemo(() => {
     return {
-      name: indicateResult.name,
-      unit: indicateResult.unit,
-      date: indicateResult.data.map(item => item.date).reverse(),
-      value: indicateResult.data.map(item => item.value).reverse(),
+      name: indicateResult?.name,
+      unit: indicateResult?.unit,
+      date: (indicateResult?.data || []).map(item => item.date).reverse(),
+      value: (indicateResult?.data || []).map(item => item.value).reverse(),
     }
   }, [indicateResult])
 
