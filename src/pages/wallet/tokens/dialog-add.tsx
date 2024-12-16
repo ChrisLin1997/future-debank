@@ -56,8 +56,7 @@ const AddDialog = ({ isOpen, onClose }: IAddDialog) => {
   const isValidToken = useMemo(() => tokenInfo.name && tokenInfo.symbol, [tokenInfo])
 
   const confirm = () => {
-    addToken(form.chainId, tokenInfo.address)
-    toast.success('Success')
+    addToken(form.chainId, tokenInfo.address, tokenInfo.name, tokenInfo.symbol)
     onClose()
   }
 

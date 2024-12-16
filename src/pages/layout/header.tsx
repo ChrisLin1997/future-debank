@@ -118,8 +118,8 @@ const Header = () => {
         <section className="ml-auto hidden sm:flex items-center gap-4">
           {/* chain switch */}
           <Button onClick={openPopover} variant="outlined" size="small">
-            { CHAIN_INFO[wallet.chainId] && <img className="mr-1 w-6 h-auto rounded-full" src={CHAIN_INFO[wallet.chainId]?.icon} /> }
-            { CHAIN_INFO[wallet.chainId]?.name || t('no_support') }
+            { CHAIN_INFO[wallet.chainId] && <img className="mr-2 w-6 h-auto rounded-full" src={CHAIN_INFO[wallet.chainId]?.icon} /> }
+            <span>{ CHAIN_INFO[wallet.chainId]?.name || t('no_support') }</span>
           </Button>
           <Popover
             open={chainMenuOpen}

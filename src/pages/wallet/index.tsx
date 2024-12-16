@@ -68,7 +68,6 @@ const User = () => {
           <article className="mt-2 w-full sm:w-[35%]">
             <div className="mb-1 py-2 px-4 h-fit flex flex-col justify-center text-right rounded-md bg-gradient-to-r from-tertiary to-secondary">
               <div className="flex items-center">
-                <img src={CHAIN_INFO[chainId]?.coin?.icon} className="w-10 h-10" />
 
                 <div className="ml-auto text-white">
                   <div className="font-bold text-xl">{formatAmount(balance)} {CHAIN_INFO[chainId]?.coin?.name}</div>
