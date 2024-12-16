@@ -49,7 +49,7 @@ export const CHAIN_INFO: { [props: number]: ChainInfo } = {
     explorer: 'https://basescan.org',
     coin: {
       name: 'ETH',
-      icon: 'eth-icon',
+      icon: base,
     },
   },
   [Chain.BSC]: {

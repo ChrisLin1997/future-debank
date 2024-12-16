@@ -50,8 +50,9 @@ const useTokens = () => {
   const removeToken = (chainId: number, address: string) => {
     setTokens(prev => {
       const newList = [...prev[CHAIN_INFO[chainId].name]]
-      const targetIndex = newList.find(item => item.address === address)
-      if (!targetIndex) return prev
+      const targetIndex = newList.findIndex(item => item.address === address)
+      console.log(targetIndex)
+      if (targetIndex === -1) return prev
 
       newList.splice(Number(targetIndex), 1)
       return { ...prev, [CHAIN_INFO[chainId].name]: newList }
