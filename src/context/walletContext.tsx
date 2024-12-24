@@ -5,7 +5,7 @@ import { checksumAddress } from '@/utils'
 import { createContainer } from 'unstated-next'
 
 const initWalletContext = {
-  provider: new BrowserProvider(window.ethereum),
+  provider: window?.ethereum ? new BrowserProvider(window?.ethereum) : null,
   chainId: 0,
   account: '',
   balance: 0,
@@ -100,7 +100,7 @@ const useWallet = () => {
 
   useEffect(() => {
     if (!CHAIN_INFO[chainId]) return
-    const rpcProvider = new ethers.BrowserProvider(window.ethereum)
+    const rpcProvider = new ethers.BrowserProvider(window?.ethereum)
 
     rpcProvider.getNetwork()
       .then((network) => {
@@ -119,7 +119,7 @@ const useWallet = () => {
   useEffect(() => {
     if (isConnect && account) getBalance()
     async function getBalance () {
-      const balanceInWei = await provider.getBalance(account)
+      const balanceInWei = await provider?.getBalance(account) || 0
       const balanceInEth = Number(formatEther(balanceInWei))
       setBalance(Math.round(balanceInEth * 10000) / 10000) // 只留四位小數)
     }
@@ -133,7 +133,7 @@ const useWallet = () => {
     setisSigner(false)
     setSigner(null)
 
-    provider.getSigner().then(res => {
+    provider?.getSigner().then(res => {
       setisSigner(true)
       setSigner(res)
     })
